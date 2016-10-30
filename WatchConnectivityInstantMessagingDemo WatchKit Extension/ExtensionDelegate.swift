@@ -7,8 +7,11 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    
+    let sessionDelegate = EHWCSessionDelegate()
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
@@ -44,6 +47,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // make sure to complete unhandled task types
                 task.setTaskCompleted()
             }
+        }
+    }
+    
+    func setupWatchConnectivity() {
+        if WCSession.isSupported() {
+            let session = WCSession.default()
+            session.delegate = sessionDelegate
+            session.activate()
         }
     }
 

@@ -36,5 +36,8 @@ class EHWatchConnectivityDelegate: NSObject, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("Did receive instant message from watch.")
+        if let sliderValue = message["message"] as? Float {
+            print("\(sliderValue)")
+        }
     }
 }

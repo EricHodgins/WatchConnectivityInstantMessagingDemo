@@ -8,14 +8,17 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var slider: WKInterfaceSlider!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        
     }
     
     override func willActivate() {
@@ -28,4 +31,19 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func sliderUpdated(_ value: Float) {
+        if WCSession.isSupported() {
+            let session = WCSession.default()
+            
+            if session.isReachable {
+                let message = ["message": value]
+                
+                session.sendMessage(message, replyHandler: nil, errorHandler: { (error) in
+                    print("ERROR: sendMessage error - \(error.localizedDescription)")
+                })
+                
+            }
+            
+        }
+    }
 }
