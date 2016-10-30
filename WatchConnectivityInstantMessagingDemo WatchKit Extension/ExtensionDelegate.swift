@@ -14,7 +14,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     let sessionDelegate = EHWCSessionDelegate()
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        setupWatchConnectivity()
     }
 
     func applicationDidBecomeActive() {

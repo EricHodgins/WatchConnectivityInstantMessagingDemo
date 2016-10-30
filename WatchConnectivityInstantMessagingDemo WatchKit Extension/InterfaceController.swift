@@ -17,8 +17,6 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        
     }
     
     override func willActivate() {
@@ -32,6 +30,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func sliderUpdated(_ value: Float) {
+        print(value)
         if WCSession.isSupported() {
             let session = WCSession.default()
             
