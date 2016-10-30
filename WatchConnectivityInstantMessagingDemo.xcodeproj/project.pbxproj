@@ -127,9 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				7A92A6371DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo */,
-				7A92A64C1DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemoTests */,
 				7A92A6561DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo WatchKit App */,
 				7A92A6651DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo WatchKit Extension */,
+				7A92A64C1DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemoTests */,
 				7A92A6361DC56FFA002264A8 /* Products */,
 			);
 			sourceTree = "<group>";
