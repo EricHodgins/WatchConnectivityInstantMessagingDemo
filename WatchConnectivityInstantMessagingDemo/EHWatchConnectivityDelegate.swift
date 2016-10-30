@@ -38,6 +38,8 @@ class EHWatchConnectivityDelegate: NSObject, WCSessionDelegate {
         print("Did receive instant message from watch.")
         if let sliderValue = message["message"] as? Float {
             print("\(sliderValue)")
+            let userInfo = ["message" : sliderValue]
+            NotificationCenter.default.post(name: Notification.Name(rawValue: WatchMessageNotifiation), object: nil, userInfo: userInfo)
         }
     }
 }

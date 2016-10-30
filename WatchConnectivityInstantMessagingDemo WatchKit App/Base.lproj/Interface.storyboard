@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchConnectivityInstantMessagingDemo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <slider width="1" alignment="left" value="1" maximum="15" steps="1" id="tO2-Mz-RnA">
+                        <slider width="1" alignment="left" value="7" maximum="15" steps="15" id="tO2-Mz-RnA">
                             <connections>
                                 <action selector="sliderUpdated:" destination="AgC-eL-Hgc" id="mOb-ga-mBf"/>
                             </connections>

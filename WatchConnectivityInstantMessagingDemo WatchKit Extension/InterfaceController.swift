@@ -17,6 +17,17 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        
+    }
+    
+    func repeatingBackgroundTest(_ numberOfTests: Int) {
+        if numberOfTests != 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { 
+                print("Repeating task: \(numberOfTests)")
+                self.repeatingBackgroundTest(numberOfTests - 1)
+            }
+        }
     }
     
     override func willActivate() {

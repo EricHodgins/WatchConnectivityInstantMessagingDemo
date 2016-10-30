@@ -15,6 +15,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabel(notification:)), name: Notification.Name(rawValue: WatchMessageNotifiation), object: nil)
+    }
+    
+    func updateLabel(notification: Notification) {
+        let userInfo = notification.userInfo
+        
+        if let message = userInfo?["message"] as? Float {
+            DispatchQueue.main.async(execute: { 
+                self.watchUpdateLabel.text = "\(message)"
+            })
+        }
     }
 
 }

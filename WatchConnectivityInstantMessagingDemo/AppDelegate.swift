@@ -9,6 +9,8 @@
 import UIKit
 import WatchConnectivity
 
+let WatchMessageNotifiation = "WatchMessageNotification"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
