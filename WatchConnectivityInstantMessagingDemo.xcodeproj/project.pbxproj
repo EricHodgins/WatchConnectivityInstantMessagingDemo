@@ -21,6 +21,7 @@
 		7A92A66B1DC56FFA002264A8 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A66A1DC56FFA002264A8 /* ExtensionDelegate.swift */; };
 		7A92A66D1DC56FFA002264A8 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A66C1DC56FFA002264A8 /* NotificationController.swift */; };
 		7A92A66F1DC56FFA002264A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A92A66E1DC56FFA002264A8 /* Assets.xcassets */; };
+		7A92A6821DC57063002264A8 /* EHWatchConnectivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A6811DC57063002264A8 /* EHWatchConnectivityDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		7A92A66C1DC56FFA002264A8 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		7A92A66E1DC56FFA002264A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A92A6701DC56FFA002264A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A92A6811DC57063002264A8 /* EHWatchConnectivityDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHWatchConnectivityDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7A92A6381DC56FFA002264A8 /* AppDelegate.swift */,
+				7A92A6811DC57063002264A8 /* EHWatchConnectivityDelegate.swift */,
 				7A92A63A1DC56FFA002264A8 /* ViewController.swift */,
 				7A92A63C1DC56FFA002264A8 /* Main.storyboard */,
 				7A92A63F1DC56FFA002264A8 /* Assets.xcassets */,
@@ -366,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A92A6821DC57063002264A8 /* EHWatchConnectivityDelegate.swift in Sources */,
 				7A92A63B1DC56FFA002264A8 /* ViewController.swift in Sources */,
 				7A92A6391DC56FFA002264A8 /* AppDelegate.swift in Sources */,
 			);
