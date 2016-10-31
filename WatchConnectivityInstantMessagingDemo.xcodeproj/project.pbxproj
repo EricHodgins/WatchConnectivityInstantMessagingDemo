@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A81E34F1DC6F7CC00EDDA78 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A81E34E1DC6F7CC00EDDA78 /* HealthKit.framework */; };
+		7A81E3521DC6F81400EDDA78 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A81E3511DC6F81400EDDA78 /* HealthKit.framework */; };
+		7A81E3551DC6FB3700EDDA78 /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A81E3541DC6FB3700EDDA78 /* HealthDataService.swift */; };
 		7A92A6391DC56FFA002264A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A6381DC56FFA002264A8 /* AppDelegate.swift */; };
 		7A92A63B1DC56FFA002264A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A63A1DC56FFA002264A8 /* ViewController.swift */; };
 		7A92A63E1DC56FFA002264A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A92A63C1DC56FFA002264A8 /* Main.storyboard */; };
@@ -75,6 +78,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A81E34C1DC6F7CC00EDDA78 /* WatchConnectivityInstantMessagingDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchConnectivityInstantMessagingDemo.entitlements; sourceTree = "<group>"; };
+		7A81E34E1DC6F7CC00EDDA78 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7A81E3501DC6F81400EDDA78 /* WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		7A81E3511DC6F81400EDDA78 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		7A81E3541DC6FB3700EDDA78 /* HealthDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
 		7A92A6351DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchConnectivityInstantMessagingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A92A6381DC56FFA002264A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A92A63A1DC56FFA002264A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A81E34F1DC6F7CC00EDDA78 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,20 +128,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A81E3521DC6F81400EDDA78 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A81E34D1DC6F7CC00EDDA78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A81E3511DC6F81400EDDA78 /* HealthKit.framework */,
+				7A81E34E1DC6F7CC00EDDA78 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A81E3531DC6FB1F00EDDA78 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7A81E3541DC6FB3700EDDA78 /* HealthDataService.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
 		7A92A62C1DC56FFA002264A8 = {
 			isa = PBXGroup;
 			children = (
+				7A81E3531DC6FB1F00EDDA78 /* Shared */,
 				7A92A6371DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo */,
 				7A92A6561DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo WatchKit App */,
 				7A92A6651DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo WatchKit Extension */,
 				7A92A64C1DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemoTests */,
 				7A92A6361DC56FFA002264A8 /* Products */,
+				7A81E34D1DC6F7CC00EDDA78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +179,7 @@
 		7A92A6371DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7A81E34C1DC6F7CC00EDDA78 /* WatchConnectivityInstantMessagingDemo.entitlements */,
 				7A92A6381DC56FFA002264A8 /* AppDelegate.swift */,
 				7A92A6811DC57063002264A8 /* EHWatchConnectivityDelegate.swift */,
 				7A92A63A1DC56FFA002264A8 /* ViewController.swift */,
@@ -183,6 +213,7 @@
 		7A92A6651DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7A81E3501DC6F81400EDDA78 /* WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements */,
 				7A92A6681DC56FFA002264A8 /* InterfaceController.swift */,
 				7A92A6831DC5745D002264A8 /* EHWCSessionDelegate.swift */,
 				7A92A66A1DC56FFA002264A8 /* ExtensionDelegate.swift */,
@@ -290,6 +321,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E3QZ6M9437;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					7A92A6481DC56FFA002264A8 = {
 						CreatedOnToolsVersion = 8.0;
@@ -306,6 +342,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E3QZ6M9437;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -375,6 +416,7 @@
 				7A92A6821DC57063002264A8 /* EHWatchConnectivityDelegate.swift in Sources */,
 				7A92A63B1DC56FFA002264A8 /* ViewController.swift in Sources */,
 				7A92A6391DC56FFA002264A8 /* AppDelegate.swift in Sources */,
+				7A81E3551DC6FB3700EDDA78 /* HealthDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchConnectivityInstantMessagingDemo WatchKit Extension/WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = E3QZ6M9437;
 				INFOPLIST_FILE = "WatchConnectivityInstantMessagingDemo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -559,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchConnectivityInstantMessagingDemo WatchKit Extension/WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = E3QZ6M9437;
 				INFOPLIST_FILE = "WatchConnectivityInstantMessagingDemo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -612,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WatchConnectivityInstantMessagingDemo/WatchConnectivityInstantMessagingDemo.entitlements;
 				DEVELOPMENT_TEAM = E3QZ6M9437;
 				INFOPLIST_FILE = WatchConnectivityInstantMessagingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -626,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WatchConnectivityInstantMessagingDemo/WatchConnectivityInstantMessagingDemo.entitlements;
 				DEVELOPMENT_TEAM = E3QZ6M9437;
 				INFOPLIST_FILE = WatchConnectivityInstantMessagingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
