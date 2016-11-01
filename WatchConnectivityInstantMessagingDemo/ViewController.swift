@@ -16,6 +16,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabel(notification:)), name: Notification.Name(rawValue: WatchMessageNotifiation), object: nil)
+        
+        let healthService: HealthDataService = HealthDataService()
+        healthService.authorizeHealthKitAccess { (success, error) in
+            DispatchQueue.main.async {
+                if success {
+                    print("success healthkit authorization: \(ViewController.self)")
+                } else {
+                    print("HealthKit authorization denied! \n\(error)")
+            
+                }
+            }
+        }
     }
     
     func updateLabel(notification: Notification) {

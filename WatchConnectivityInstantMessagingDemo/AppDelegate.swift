@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 import WatchConnectivity
 
 let WatchMessageNotifiation = "WatchMessageNotification"
@@ -51,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let session = WCSession.default()
             session.delegate = watchSessionDelegate
             session.activate()
+        }
+    }
+    
+    let healthStore = HKHealthStore()
+    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
+        healthStore.handleAuthorizationForExtension { (success, error) in
+            print("Application should request Health Authorization.")
         }
     }
 

@@ -31,8 +31,20 @@ class InterfaceController: WKInterfaceController {
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let healthService: HealthDataService = HealthDataService()
+        
+        healthService.authorizeHealthKitAccess { (success, error) in
+            if success {
+                print("HealthKit authorization received.")
+            } else {
+                print("HealthKit authorization denied.!")
+                if error != nil {
+                    print("\(error?.localizedDescription)")
+                }
+            }
+        }
     }
     
     override func didDeactivate() {
