@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -15,9 +19,15 @@
                                 <action selector="sliderUpdated:" destination="AgC-eL-Hgc" id="mOb-ga-mBf"/>
                             </connections>
                         </slider>
+                        <switch width="1" height="80" alignment="left" title="Start Workout" id="VF0-06-lXs">
+                            <connections>
+                                <action selector="workoutSwitchActivated:" destination="AgC-eL-Hgc" id="NN6-aG-K19"/>
+                            </connections>
+                        </switch>
                     </items>
                     <connections>
                         <outlet property="slider" destination="tO2-Mz-RnA" id="ZkS-hh-P8Q"/>
+                        <outlet property="workoutSwitchControl" destination="VF0-06-lXs" id="SuT-li-6VJ"/>
                     </connections>
                 </controller>
             </objects>

@@ -9,16 +9,37 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
+import HealthKit
 
 
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var slider: WKInterfaceSlider!
+    @IBOutlet var workoutSwitchControl: WKInterfaceSwitch!
+    
+    lazy var configuration: HKWorkoutConfiguration = {
+        let workoutConfiguration = HKWorkoutConfiguration()
+        workoutConfiguration.activityType = .running
+        workoutConfiguration.locationType = .indoor
+        return workoutConfiguration
+    }()
+    
+    lazy var workoutSession: WorkoutSessionService? = {
+        return WorkoutSessionService(configuration: self.configuration)
+    }()
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         
+    }
+    @IBAction func workoutSwitchActivated(_ value: Bool) {
+        if value == true {
+            workoutSession?.startSession()
+        } else {
+            workoutSession?.stopSession()
+        }
     }
     
     func repeatingBackgroundTest(_ numberOfTests: Int) {
