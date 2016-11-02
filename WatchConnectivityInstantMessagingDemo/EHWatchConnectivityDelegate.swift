@@ -35,7 +35,6 @@ class EHWatchConnectivityDelegate: NSObject, WCSessionDelegate {
     //MARK: - Instant Messaging
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print("Did receive instant message from watch.")
         if let sliderValue = message["message"] as? Float {
             print("\(sliderValue)")
             let userInfo = ["message" : sliderValue]
@@ -44,6 +43,8 @@ class EHWatchConnectivityDelegate: NSObject, WCSessionDelegate {
         
         if let heartRate = message["heart_rate"] as? Double {
             print("Got the heart rate: \(heartRate)")
+            let userInfo = ["heart_rate" : heartRate]
+            NotificationCenter.default.post(name: Notification.Name(rawValue: WatchHeartRateNotification), object: nil, userInfo: userInfo)
         }
     }
 }

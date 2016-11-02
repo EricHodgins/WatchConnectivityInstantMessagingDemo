@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,9 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-66-8AD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-66-8AD">
+                                <rect key="frame" x="16" y="58" width="343" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="CjJ-T9-lZV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="63"/>
+                                <color key="textColor" red="0.94509803920000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch Slider Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwE-tB-XEX">
+                                <rect key="frame" x="16" y="29" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Heart Rate " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Al-OO-oVh">
+                                <rect key="frame" x="16" y="236" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIm-au-SHO">
+                                <rect key="frame" x="16" y="265" width="343" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="cGm-Va-Fl8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="63"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,12 +55,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="2Al-OO-oVh" secondAttribute="leading" id="25r-9t-oht"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TIm-au-SHO" secondAttribute="trailing" id="3jX-5y-FYG"/>
+                            <constraint firstItem="4L9-66-8AD" firstAttribute="top" secondItem="UwE-tB-XEX" secondAttribute="bottom" constant="8" id="6hE-aa-nkz"/>
+                            <constraint firstItem="2Al-OO-oVh" firstAttribute="top" secondItem="4L9-66-8AD" secondAttribute="bottom" constant="40" id="7t4-DE-vh4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TIm-au-SHO" secondAttribute="leading" id="IOL-YN-MwC"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4L9-66-8AD" secondAttribute="leading" id="J3X-cX-bUm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4L9-66-8AD" secondAttribute="trailing" id="MGe-9c-qyk"/>
-                            <constraint firstItem="4L9-66-8AD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Q5n-5D-iDw"/>
+                            <constraint firstItem="4L9-66-8AD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="Q5n-5D-iDw"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UwE-tB-XEX" secondAttribute="leading" id="awr-Rw-dba"/>
+                            <constraint firstItem="TIm-au-SHO" firstAttribute="top" secondItem="2Al-OO-oVh" secondAttribute="bottom" constant="8" id="xxJ-aR-3Wf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentHeartRateLabel" destination="TIm-au-SHO" id="4Uz-KJ-VFt"/>
                         <outlet property="watchUpdateLabel" destination="4L9-66-8AD" id="2fA-ao-Ft8"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@ import HealthKit
 import WatchConnectivity
 
 let WatchMessageNotifiation = "WatchMessageNotification"
+let WatchHeartRateNotification = "WatchHeartRateNotification"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
