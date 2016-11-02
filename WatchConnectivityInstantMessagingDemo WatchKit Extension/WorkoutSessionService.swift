@@ -61,6 +61,7 @@ extension WorkoutSessionService: HKWorkoutSessionDelegate {
     
     fileprivate func sessionEnded(_ date: Date) {
         print("Session ended.")
+        stopSession()
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
