@@ -8,6 +8,7 @@
 
 import Foundation
 import HealthKit
+import WatchConnectivity
 
 
 extension WorkoutSessionService {
@@ -45,6 +46,7 @@ extension WorkoutSessionService {
             if let hr = samples.last?.quantity {
                 self.heartRate = hr
                 print("heart rate = \(hr)")
+                self.sendUpdatedHeartRateToPhone(hr: hr)
             }
         }
     }
@@ -56,6 +58,20 @@ extension WorkoutSessionService {
         let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
         
         return NSCompoundPredicate(andPredicateWithSubpredicates: [dataPredicate, devicePredicate])
+    }
+    
+    func sendUpdatedHeartRateToPhone(hr: HKQuantity) {
+        if WCSession.isSupported() {
+            let session = WCSession.default()
+            let hrValue = hr.doubleValue(for: hrUnit)
+            if session.isReachable {
+                let heartRateMessage = ["heart_rate": hrValue]
+                
+                session.sendMessage(heartRateMessage, replyHandler: nil, errorHandler: { (error) in
+                    print("ERROR: \(error.localizedDescription)")
+                })
+            }
+        }
     }
 }
 

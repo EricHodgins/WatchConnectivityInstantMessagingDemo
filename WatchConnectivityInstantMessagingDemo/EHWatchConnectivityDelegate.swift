@@ -41,5 +41,9 @@ class EHWatchConnectivityDelegate: NSObject, WCSessionDelegate {
             let userInfo = ["message" : sliderValue]
             NotificationCenter.default.post(name: Notification.Name(rawValue: WatchMessageNotifiation), object: nil, userInfo: userInfo)
         }
+        
+        if let heartRate = message["heart_rate"] as? Double {
+            print("Got the heart rate: \(heartRate)")
+        }
     }
 }

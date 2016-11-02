@@ -34,20 +34,12 @@ class InterfaceController: WKInterfaceController {
         
         
     }
+    
     @IBAction func workoutSwitchActivated(_ value: Bool) {
         if value == true {
             workoutSession?.startSession()
         } else {
             workoutSession?.stopSession()
-        }
-    }
-    
-    func repeatingBackgroundTest(_ numberOfTests: Int) {
-        if numberOfTests != 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { 
-                print("Repeating task: \(numberOfTests)")
-                self.repeatingBackgroundTest(numberOfTests - 1)
-            }
         }
     }
     
@@ -87,6 +79,19 @@ class InterfaceController: WKInterfaceController {
                 
             }
             
+        }
+    }
+}
+
+// MARK: - Helpers
+
+extension InterfaceController {
+    func repeatingBackgroundTest(_ numberOfTests: Int) {
+        if numberOfTests != 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                print("Repeating task: \(numberOfTests)")
+                self.repeatingBackgroundTest(numberOfTests - 1)
+            }
         }
     }
 }
