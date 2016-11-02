@@ -10,6 +10,7 @@
 		7A81E34F1DC6F7CC00EDDA78 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A81E34E1DC6F7CC00EDDA78 /* HealthKit.framework */; };
 		7A81E3521DC6F81400EDDA78 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A81E3511DC6F81400EDDA78 /* HealthKit.framework */; };
 		7A81E3551DC6FB3700EDDA78 /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A81E3541DC6FB3700EDDA78 /* HealthDataService.swift */; };
+		7A85038F1DC97950007A48CF /* WorkoutSessionService_Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85038E1DC97950007A48CF /* WorkoutSessionService_Queries.swift */; };
 		7A92A6391DC56FFA002264A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A6381DC56FFA002264A8 /* AppDelegate.swift */; };
 		7A92A63B1DC56FFA002264A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92A63A1DC56FFA002264A8 /* ViewController.swift */; };
 		7A92A63E1DC56FFA002264A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A92A63C1DC56FFA002264A8 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		7A81E3501DC6F81400EDDA78 /* WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchConnectivityInstantMessagingDemo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		7A81E3511DC6F81400EDDA78 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7A81E3541DC6FB3700EDDA78 /* HealthDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
+		7A85038E1DC97950007A48CF /* WorkoutSessionService_Queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSessionService_Queries.swift; sourceTree = "<group>"; };
 		7A92A6351DC56FFA002264A8 /* WatchConnectivityInstantMessagingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchConnectivityInstantMessagingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A92A6381DC56FFA002264A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A92A63A1DC56FFA002264A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				7AFF432F1DC82F5900FC618F /* WorkoutSessionService.swift */,
+				7A85038E1DC97950007A48CF /* WorkoutSessionService_Queries.swift */,
 			);
 			name = Workout;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				7A92A6691DC56FFA002264A8 /* InterfaceController.swift in Sources */,
 				7AFF43301DC82F5900FC618F /* WorkoutSessionService.swift in Sources */,
 				7AFF432D1DC825D400FC618F /* HealthDataService.swift in Sources */,
+				7A85038F1DC97950007A48CF /* WorkoutSessionService_Queries.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

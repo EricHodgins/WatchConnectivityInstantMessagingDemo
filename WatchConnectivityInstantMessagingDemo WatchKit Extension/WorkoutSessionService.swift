@@ -9,6 +9,9 @@
 import Foundation
 import HealthKit
 
+let hrUnit = HKUnit(from: "count/min")
+let hrType: HKQuantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+
 class WorkoutSessionService: NSObject {
     
     fileprivate let healthService = HealthDataService()
@@ -16,6 +19,8 @@ class WorkoutSessionService: NSObject {
     var endDate: Date?
     
     var hrData: [HKQuantitySample] = [HKQuantitySample]()
+    var heartRate: HKQuantity
+    internal var hrAnchorValue: HKQueryAnchor?
     
     let hkWorkoutConfiguration: HKWorkoutConfiguration
     let session: HKWorkoutSession
@@ -23,8 +28,6 @@ class WorkoutSessionService: NSObject {
     init?(configuration: HKWorkoutConfiguration) {
 
         self.hkWorkoutConfiguration = configuration
-        //hkWorkoutConfiguration.activityType = HKWorkoutActivityType.running
-        //hkWorkoutConfiguration.locationType = HKWorkoutSessionLocationType.indoor
         
         do {
             session = try HKWorkoutSession(configuration: hkWorkoutConfiguration)
@@ -33,7 +36,10 @@ class WorkoutSessionService: NSObject {
             return nil
         }
         
+        heartRate = HKQuantity(unit: hrUnit, doubleValue: 0.0)
+        
         super.init()
+        
         session.delegate = self
     }
     
@@ -49,6 +55,8 @@ class WorkoutSessionService: NSObject {
 extension WorkoutSessionService: HKWorkoutSessionDelegate {
     fileprivate func sessionStarted(_ date: Date) {
         print("Session started.")
+        let query = heartRateQuery(withStartDate: Date())
+        healthService.healthKitStore.execute(query)
     }
     
     fileprivate func sessionEnded(_ date: Date) {
@@ -57,6 +65,20 @@ extension WorkoutSessionService: HKWorkoutSessionDelegate {
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
         print("Workout session did change state: \(toState.rawValue)-\(fromState.rawValue)")
+        
+        DispatchQueue.main.async {
+            switch toState {
+            case .running:
+                self.sessionStarted(date)
+            case .ended:
+                self.sessionEnded(date)
+            case .paused:
+                break
+            default:
+                print("Something unexpected happened!")
+            }
+            
+        }
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
