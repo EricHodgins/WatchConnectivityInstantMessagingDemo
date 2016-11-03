@@ -24,10 +24,7 @@ class InterfaceController: WKInterfaceController {
         return workoutConfiguration
     }()
     
-    lazy var workoutSession: WorkoutSessionService? = {
-        return WorkoutSessionService(configuration: self.configuration)
-    }()
-    
+    var workoutSession: WorkoutSessionService?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -37,6 +34,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func workoutSwitchActivated(_ value: Bool) {
         if value == true {
+            workoutSession = WorkoutSessionService(configuration: self.configuration)
             workoutSession?.startSession()
         } else {
             workoutSession?.stopSession()

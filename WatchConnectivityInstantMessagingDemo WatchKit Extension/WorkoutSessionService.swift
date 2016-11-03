@@ -18,6 +18,7 @@ class WorkoutSessionService: NSObject {
     var startDate: Date?
     var endDate: Date?
     
+    var heartRateQuery: HKQuery!
     var hrData: [HKQuantitySample] = [HKQuantitySample]()
     var heartRate: HKQuantity
     internal var hrAnchorValue: HKQueryAnchor?
@@ -48,6 +49,7 @@ class WorkoutSessionService: NSObject {
     }
     
     func stopSession() {
+        healthService.healthKitStore.stop(heartRateQuery)
         healthService.healthKitStore.end(session)
     }
 }
@@ -55,13 +57,12 @@ class WorkoutSessionService: NSObject {
 extension WorkoutSessionService: HKWorkoutSessionDelegate {
     fileprivate func sessionStarted(_ date: Date) {
         print("Session started.")
-        let query = heartRateQuery(withStartDate: Date())
-        healthService.healthKitStore.execute(query)
+        heartRateQuery = heartRateQuery(withStartDate: Date())
+        healthService.healthKitStore.execute(heartRateQuery)
     }
     
     fileprivate func sessionEnded(_ date: Date) {
         print("Session ended.")
-        stopSession()
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
@@ -85,6 +86,7 @@ extension WorkoutSessionService: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         print("Did fail with error: \(error)")
     }
+    
 }
 
 
